@@ -41,10 +41,14 @@ div{
 }
 
 .first_links{
+    border: 1px solid deeppink;
     display: flex;
     flex-direction: column;
     font-size: 25px;
-    margin-top: 80px;
+    margin-top: 15px;
+    gap: 10px;
+    text-decoration: underline;
+    line-height: 1;
 }
 
 /* paragraph title */
@@ -63,7 +67,8 @@ div{
     gap: 16px;
     font-size: 20px;
     font-weight: 700;
-    margin-top: 130px;
+    margin-top: 30px;
+    text-decoration: underline;
 }
 
 /* container 2: image */
@@ -183,20 +188,22 @@ a.readmore:hover{
 /* Phones (small) */
 @media (max-width: 479px) {
     .blogs_container{
-        /*border: 1px solid deeppink;*/
+        border: 1px solid green;
         padding: 2px 30px;
         text-align: left;
-        font-size: 120%;
+        /*font-size: 120%;*/
         width: 430px;
         line-height: 1.6;
     }
     .first_links_snips{
+        border: 1px solid white;
         display: flex;
         flex-direction: column;
+        font-size: 25px;
         margin-top: 15px;
         text-decoration: underline;
-        font-size: 18px;
-        line-height: 1.5;
+        line-height: 1;
+
     }
     .blog-title{
         font-weight: 200;
@@ -205,16 +212,8 @@ a.readmore:hover{
     a{
         text-decoration:none ;
     }
-    .last_links_snips{
-        display: flex;
-        flex-direction: row;
-        gap: 16px;
-        font-size: 20px;
-        font-weight: 700;
-        margin-top: 10px;
-        text-decoration: underline;
-    }
     .insider{
+        /*border: 1px solid purple;*/
         font-style: var(--font-family);
         font-size: 40px;
         line-height: 1.2;
@@ -224,7 +223,7 @@ a.readmore:hover{
 }
 
 /* Phones (large) */
-@media (min-width: 480px) and (max-width: 768px) {
+@media (min-width: 480px) and (max-width: 769px) {
     .blogs_container{
         /*border: 1px solid deeppink;*/
         padding: 2px 30px;
@@ -239,7 +238,7 @@ a.readmore:hover{
         margin-top: 15px;
         text-decoration: underline;
         font-size: 18px;
-        line-height: 1.5;
+        line-height: 1;
     }
     .blog-title{
         font-weight: 200;
@@ -248,15 +247,15 @@ a.readmore:hover{
     a{
         text-decoration:none ;
     }
-    .last_links_snips{
+    /*.last_links_snips{
         display: flex;
         flex-direction: row;
         gap: 16px;
-        font-size: 20px;
-        font-weight: 700;
+        font-size: 5px;
+        font-weight: 200;
         margin-top: 10px;
         text-decoration: underline;
-    }
+    }*/
     .insider{
         font-style: var(--font-family);
         font-size: 35px;
@@ -267,7 +266,7 @@ a.readmore:hover{
 }
 
 /* Tablets */
-@media (min-width: 769px) and (max-width: 1024px) {
+@media (min-width: 770px) and (max-width: 1024px) {
     .blogs_container{
         /*border: 1px solid deeppink;*/
         padding: 2px 70px;
@@ -290,15 +289,6 @@ a.readmore:hover{
     }
     a{
         text-decoration:none ;
-    }
-    .last_links_snips{
-        display: flex;
-        flex-direction: row;
-        gap: 16px;
-        font-size: 20px;
-        font-weight: 700;
-        margin-top: 10px;
-        text-decoration: underline;
     }
 }
 
@@ -327,15 +317,7 @@ a.readmore:hover{
     a{
         text-decoration:none ;
     }
-    .last_links_snips{
-        display: flex;
-        flex-direction: row;
-        gap: 16px;
-        font-size: 20px;
-        font-weight: 700;
-        margin-top: 10px;
-        text-decoration: underline;
-    }
+
 }
 
 /* Desktops */
@@ -363,15 +345,7 @@ a.readmore:hover{
     a{
         text-decoration:none ;
     }
-    .last_links_snips{
-        display: flex;
-        flex-direction: row;
-        gap: 16px;
-        font-size: 20px;
-        font-weight: 700;
-        margin-top: 10px;
-        text-decoration: underline;
-    }
+
 }
 
 /* Very large screens / TVs */
@@ -399,15 +373,7 @@ a.readmore:hover{
     a{
         text-decoration:none ;
     }
-    .last_links_snips{
-        display: flex;
-        flex-direction: row;
-        gap: 16px;
-        font-size: 20px;
-        font-weight: 700;
-        margin-top: 10px;
-        text-decoration: underline;
-    }
+
 }
 
 .blog-post{
@@ -438,15 +404,6 @@ a.readmore:hover{
         text-decoration: underline;
         font-size: 35px;
         line-height: 1.5;
-    }
-    .last_links_snips{
-        display: flex;
-        flex-direction: row;
-        gap: 16px;
-        font-size: 50px;
-        font-weight: 700;
-        margin-top: 10px;
-        text-decoration: underline;
     }
 }
 
