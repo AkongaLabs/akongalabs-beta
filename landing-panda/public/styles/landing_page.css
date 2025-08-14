@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;700;900&display=swap");
 
 :root {
   --bg-color: #1a1f2e;
@@ -8,7 +8,9 @@
   --lblue-color: #538cd3;
 }
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -46,7 +48,7 @@ a:focus {
   justify-content: space-between;
   align-items: start;
   align-content: left;
-  padding: 24px;
+  padding: 24px 24px 16px 24px;
 }
 
 .first_links {
@@ -57,45 +59,64 @@ a:focus {
   margin-top: 20px;
   text-decoration: underline;
   line-height: 1.5rem;
+  text-underline-offset: 2px;
 }
 
 .title {
-  font-size: 32px;
+  font-size: 30px;
   font-weight: 400;
   line-height: 2rem;
   margin: 0px;
+  font-family: 'Bricolage Grotesque', sans-serif;
 }
 
 .about {
   flex: 1;
   display: flex;
-  line-height: 1.5rem;
+  line-height: 1.25rem;
   flex-direction: column;
   justify-content: center;
+  font-family: 'Inter', sans-serif;
 }
 
-.about p{
+.about p {
   font-size: 14px;
-  margin: 16px 0px 0px;
+  margin: 20px 0px 0px;
 }
 
 .last_links {
   display: flex;
   flex-direction: row;
   gap: 16px;
-  font-size: 20px;
-  font-weight: 500;
+  font-size: 16px;
+  font-weight: 700;
   line-height: 1.5rem;
   text-decoration: underline;
+  text-underline-offset: 2px;
 }
 
 .image_container {
-  display: block;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
 }
 
 .header_image {
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
+  object-position: left;
+}
+
+.image_text {
+  position: absolute;
+  left: 38px;
+  bottom: 34px;
+  font-size: 60px;
+  font-weight: 900;
+  line-height: 0.9;
+  color: #eff8ff;
 }
 
 /* Style for Tablets and up*/
@@ -105,8 +126,7 @@ a:focus {
   }
 
   .content {
-    padding-left: 80px;
-    padding-right: 80px;
+    padding: 120px;
   }
 
   .first_links {
@@ -136,5 +156,5 @@ a:focus {
 
 /* Laptops and up */
 @media (min-width: 1024px) {
-
+  
 }
