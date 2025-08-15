@@ -8,7 +8,10 @@ const baseUrl = isDev ? "http://localhost:3001" : "";
   <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, minimum-scale=1"
+    />
     <meta name="generator" content={Astro.generator} />
     <title>Akong’a Labs</title>
   </head>
@@ -42,9 +45,7 @@ const baseUrl = isDev ? "http://localhost:3001" : "";
           src="/images/header-background.webp"
           alt="header image"
         />
-        <div class="image_text">
-          Akong'a Labs
-        </div>
+        <div class="image_text">Akong'a Labs</div>
       </div>
     </div>
   </body>
