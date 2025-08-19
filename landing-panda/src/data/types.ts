@@ -22,7 +22,7 @@ interface BlogPost {
   _embedded?: {
     author?: {
       name: string;
-    };
+      }[];
   };
 }
 
