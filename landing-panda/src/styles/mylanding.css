@@ -29,7 +29,6 @@ body {
 div {
   /* border: 1px solid white; */
 }
-
 .container {
   display: flex;
   flex-direction: column;
@@ -135,10 +134,12 @@ a:focus {
 .bluecolor {
   color: var(--blue-color);
 }
+
 a.readmore {
   color: var(--blue-color);
   text-decoration: none;
 }
+
 a.readmore:hover {
   color: var(--lblue-color);
   text-decoration: underline;
@@ -148,13 +149,16 @@ a.readmore:hover {
   display: flex;
   flex-direction: column;
 }
+
 .para_space {
   line-height: 1.5 !important;
 }
+
 hr {
   width: 100%;
   margin: 2rem 0;
 }
+
 /* blogs styling */
 .blog-body {
   display: flex;
@@ -169,11 +173,13 @@ hr {
   color: var(--text-color);
   width: 710px;
 }
+
 .blog-post img {
   max-width: 700px;
   height: auto;
   display: block;
 }
+
 .blog-post title {
   align-content: center;
   align-self: center;
@@ -244,6 +250,10 @@ h3 {
 .nav-links a:hover {
   text-decoration: underline;
   color:#83bbff
+}
+
+.convertkit-form {
+  line-height: 1;
 }
 
 /*Media queries for home page*/
