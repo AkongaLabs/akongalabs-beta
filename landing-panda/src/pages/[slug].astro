@@ -1,54 +1,90 @@
 ---
 import type { BlogPost } from "../data/types";
 import "../../src/styles/mylanding.css";
+import { preview } from "astro";
 export async function getStaticPaths() {
   // _embed query param expands related objects like authors
   const res = await fetch("https://akongalabs.com/wp-json/wp/v2/posts?_embed");
   const posts: BlogPost[] = await res.json();
 
-  return posts.map((post) => ({
+  return posts.map((post, index) => ({
     params: { slug: post.slug },
-    props: { post },
+    props: {
+      post,
+      prevPost: posts[index + 1] || null,
+      nextPost: posts[index - 1] || null,
+    },
   }));
 }
-const { post } = Astro.props as { post: BlogPost };
+
+const { post, prevPost, nextPost } = Astro.props as {
+  post: BlogPost;
+  prevPost: BlogPost | null;
+  nextPost: BlogPost | null;
+};
 ---
 
 <html>
   <head>
     <title>{post.title.rendered}</title>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
   </head>
   <body>
-      <article class="blog-post">
-          <div class="blog-body">
-            <div class="first_links_snips">
-                <a href="/newLanding">Akong'a Labs</a>
-                <a href="/blogSnippets">Blogs</a>
-            </div>
-            <div class="blog-content">
-            <h1 set:html={post.title.rendered}></h1>
-            <img src={post.jetpack_featured_media_url}/>
-            <p class="author-date">
-              <span class="author">{post._embedded?.author?.[0]?.name}</span>
-              <span class="date">
-                {new Date(post.date).toLocaleDateString("en-US", {
+    <article class="blog-post">
+      <div class="blog-body">
+        <div class="first_links_snips">
+          <a href="/newLanding">Akong'a Labs</a>
+          <a href="/blogSnippets">Blogs</a>
+        </div>
+        <div class="blog-content">
+          <h1 set:html={post.title.rendered} />
+          <img src={post.jetpack_featured_media_url} />
+          <p class="author-date">
+            <span class="author">{post._embedded?.author?.[0]?.name}</span>
+            <span class="date">
+              {
+                new Date(post.date).toLocaleDateString("en-US", {
                   year: "numeric",
                   month: "long",
                   day: "numeric",
-                })}
-              </span>
-            </p>
+                })
+              }
+            </span>
+          </p>
 
-            <div set:html={post.content.rendered}></div>
-            </div>
-            <script async data-uid="4e5ba9cc5c" src="https://akongalabs.kit.com/4e5ba9cc5c/index.js"></script>
-            <hr>
-            <div class="last_links">
-                <p> <a href="https://x.com/adrianmurage">X</a> </p>
-                <p> <a href="https://github.com/AkongaLabs">GitHub</a></p>
-            </div>
-          </div>
-      </article>
+          <div set:html={post.content.rendered} />
+        </div>
+        <script
+          async
+          data-uid="4e5ba9cc5c"
+          src="https://akongalabs.kit.com/4e5ba9cc5c/index.js"></script>
+        <hr />
+
+        {
+          (prevPost || nextPost) && (
+            <nav class="blog-navigation">
+              <div class="nav-links">
+                {prevPost && (
+                  <a href={`/${prevPost.slug}`}>
+                    Previous: <span set:html={prevPost.title.rendered} />
+                  </a>
+                )}
+
+                {nextPost && (
+                  <a href={`/${nextPost.slug}`}>
+                    Next: <span set:html={nextPost.title.rendered} />
+                  </a>
+                )}
+              </div>
+            </nav>
+          )
+        }
+        
+        <div class="last_links">
+          <p><a href="https://x.com/adrianmurage">X</a></p>
+          <p><a href="https://github.com/AkongaLabs">GitHub</a></p>
+        </div>
+      </div>
+    </article>
   </body>
 </html>
