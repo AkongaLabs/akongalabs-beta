@@ -26,9 +26,6 @@ body {
 }
 
 /* body content */
-div{
-    /* border: 1px solid white; */
-}
 
 .container{
     display: flex;
@@ -130,7 +127,6 @@ a:focus {
     margin: auto;
     width: 700px;
     gap: 10px;
-    /*line-height: 1.5;*/
 }
 
 /* date and read more colors */
@@ -221,6 +217,11 @@ hr {
 .insider{
     font-style: var(--font-family);
     font-size: 35px;
+}
+
+.convertkit-form {
+
+  line-height: 1;
 }
 
 /*Media queries for home page*/
@@ -334,7 +335,6 @@ hr {
 /* Phones (small) */
 @media (max-width: 479px) {
     .blogs_container{
-        border: 1px solid green;
         padding: 2px 30px;
         text-align: left;
         width: 430px;
