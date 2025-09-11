@@ -32,7 +32,9 @@ const posts: BlogPost[] = await res.json();
           return (
             <div class="asnip">
               <p class="bluecolor" set:html={formattedDate}></p>
-              <h1 class="blog-title" set:html={post.title.rendered}></h1>
+              <h1 class="blog-title">
+                <a href={`/${post.slug}`} set:html={post.title.rendered}></a>
+              </h1>
               <div class="para_space" set:html={cleanedExcerpt}></div>
               <a class="readmore" href={`/${post.slug}`}>Read more →</a>
             </div>
@@ -42,7 +44,7 @@ const posts: BlogPost[] = await res.json();
 
       <p class="insider">Get insider posts straight in your inbox</p>
 
-        <script async data-uid="4e5ba9cc5c" src="https://akongalabs.kit.com/4e5ba9cc5c/index.js"></script>
+      <script async data-uid="4e5ba9cc5c" src="https://akongalabs.kit.com/4e5ba9cc5c/index.js"></script>
       <div class="last_links">
         <p><a href="https://x.com/adrianmurage">X</a></p>
         <p><a href="https://github.com/AkongaLabs">GitHub</a></p>
