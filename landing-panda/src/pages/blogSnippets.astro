@@ -1,0 +1,55 @@
+---
+import "../../src/styles/mylanding.css";
+import type { BlogPost } from "../data/types";
+
+const res = await fetch("https://akongalabs.com/wp-json/wp/v2/posts");
+const posts: BlogPost[] = await res.json();
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Blog snippets</title>
+  </head>
+  <body>
+    <div class="blogs_container">
+      <div class="first_links">
+        <a href="/newLanding">Akong'a Labs</a>
+        <a href="/blogSnippets">Blogs</a>
+      </div>
+
+      <div>
+        {posts.map((post) => {
+          const formattedDate = new Date(post.date).toLocaleDateString("en-US", {
+            year: "numeric",
+            month: "long",
+            day: "numeric",
+          });
+          const cleanedExcerpt = post.excerpt.rendered.replace(/\[&hellip;\]/g, "...");
+
+          return (
+            <div class="asnip">
+              <p class="bluecolor" set:html={formattedDate}></p>
+              <h1 class="blog-title">
+                <a href={`/${post.slug}`} set:html={post.title.rendered}></a>
+              </h1>
+              <div class="para_space" set:html={cleanedExcerpt}></div>
+              <a class="readmore" href={`/${post.slug}`}>Read more →</a>
+            </div>
+          );
+        })}
+      </div>
+
+      <p class="insider">Get insider posts straight in your inbox</p>
+
+      <script async data-uid="4e5ba9cc5c" src="https://akongalabs.kit.com/4e5ba9cc5c/index.js"></script>
+      <div class="last_links">
+        <p><a href="https://x.com/adrianmurage">𝕏</a></p>
+        <p><a href="https://github.com/AkongaLabs">GitHub</a></p>
+      </div>
+    </div>
+  </body>
+</html>
+<!-- <script async data-uid="4e5ba9cc5c" src="https://akongalabs.kit.com/4e5ba9cc5c/index.js"></script> -->

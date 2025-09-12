@@ -27,8 +27,10 @@ export function setupSecurityMiddleware(app: Application): void {
       contentSecurityPolicy: {
         directives: {
           defaultSrc: ["'self'"],
-          styleSrc: ["'self'", "'unsafe-inline'"], // Allow inline styles for React/Astro
-          scriptSrc: ["'self'", "'unsafe-inline'"], // Allow inline scripts for React
+          // styleSrc: ["'self'", "'unsafe-inline'"], // Allow inline styles for React/Astro https://fonts.googleapis.com
+          styleSrc: ["'self'", "'unsafe-inline'","https://fonts.googleapis.com"], // Allow inline styles for React/Astro
+          // scriptSrc: ["'self'", "'unsafe-inline'"], // Allow inline scripts for React
+          scriptSrc: ["'self'", "'unsafe-inline'", "https://akongalabs.kit.com/4e5ba9cc5c/index.js"], // Allow inline scripts for React
           imgSrc: ["'self'", "data:", "https:"], // Allow images from self, data URLs, and HTTPS
           fontSrc: ["'self'", "https:", "data:"],
           connectSrc: ["'self'"],

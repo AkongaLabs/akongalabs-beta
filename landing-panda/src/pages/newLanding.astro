@@ -1,0 +1,53 @@
+---
+// import "../../public/styles/mylanding.css";
+import "../../src/styles/mylanding.css"
+const isDev = import.meta.env.DEV;
+const baseUrl = isDev ? "http://localhost:3001" : "";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, minimum-scale=1"
+    />
+    <meta name="generator" content={Astro.generator} />
+    <title>Akong’a Labs</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="content">
+        <div class="first_links">
+          <a href="/newLanding">Akong'a Labs</a>
+          <a href="/blogSnippets">Blogs</a>
+        </div>
+        <div class="about">
+          <h2 class="title">Akong’a — The number “1” in the Pokot language.</h2>
+          <p>
+            Akonga Labs is the first of a new kind of company, in Kenya, and
+            Africa. A <s>startup</s> <strong>stayup</strong> that builds a sustainable business first.
+          </p>
+          <p>
+            Prioritizing building <strong>needed products</strong> in <strong>existing</strong>
+            and <strong>validated markets.</strong> Prioritizing <strong>profit</strong> over “growth at all cost”.
+          </p>
+        </div>
+
+        <div class="last_links">
+          <p><a href="https://x.com/adrianmurage">𝕏</a></p>
+          <p><a href="https://github.com/AkongaLabs">GitHub</a></p>
+        </div>
+      </div>
+      <div class="image_container">
+        <img
+          class="header_image"
+          src="/images/header-background.webp"
+          alt="header image"
+        />
+        <div class="image_text">Akong'a Labs</div>
+      </div>
+    </div>
+  </body>
+</html>
