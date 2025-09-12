@@ -26,7 +26,7 @@ const { post, prevPost, nextPost } = Astro.props as {
 
 <html>
   <head>
-    <title>{post.title.rendered}</title>
+    <title set:html={post.title.rendered}></title>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1"/>
@@ -82,7 +82,7 @@ const { post, prevPost, nextPost } = Astro.props as {
         }
 
         <div class="last_links">
-          <p><a href="https://x.com/adrianmurage">X</a></p>
+          <p><a href="https://x.com/adrianmurage">𝕏</a></p>
           <p><a href="https://github.com/AkongaLabs">GitHub</a></p>
         </div>
       </div>
